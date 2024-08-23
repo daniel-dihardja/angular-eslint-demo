@@ -179,44 +179,48 @@
 
 <main class="main">
   <div class="content">
-    <!-- Example HTML to trigger ESLint rules -->
+    <!-- Example HTML after fixing issues -->
 
-    <!-- Trigger @angular-eslint/template/alt-text -->
-    <img src="logo.png" />
+    <!-- Fixed: @angular-eslint/template/alt-text -->
+    <img src="logo.png" alt="Company logo" />
 
-    <!-- Trigger @angular-eslint/template/click-events-have-key-events -->
-    <div (click)="onClick()"></div>
+    <!-- Fixed: @angular-eslint/template/click-events-have-key-events -->
+    <div (click)="onClick()" (keydown)="onKeydown()" tabindex="0"></div>
 
-    <!-- Trigger @angular-eslint/template/elements-content -->
-    <!-- An empty aria-label attribute -->
-    <div aria-label=""></div>
+    <!-- Fixed: @angular-eslint/template/elements-content -->
+    <div aria-label="Close button"></div>
 
-    <!-- Trigger @angular-eslint/template/interactive-supports-focus -->
-    <div role="button" (click)="onClick()">Click me</div>
+    <!-- Fixed: @angular-eslint/template/interactive-supports-focus -->
+    <div role="button" tabindex="0" (click)="onClick()" (keydown)="onKeydown()">
+      Click me
+    </div>
 
-    <!-- Trigger @angular-eslint/template/label-has-associated-control -->
-    <label>Name</label>
+    <!-- Fixed: @angular-eslint/template/label-has-associated-control -->
+    <label for="name">Name</label>
     <input type="text" id="name" />
 
-    <!-- Trigger @angular-eslint/template/mouse-events-have-key-events -->
-    <div (mouseover)="onMouseOver()"></div>
+    <!-- Fixed: @angular-eslint/template/mouse-events-have-key-events -->
+    <div
+      tabindex="0"
+      (mouseover)="onMouseOver()"
+      (keydown)="onKeydown()"
+      (focus)="onMouseOver()"
+    ></div>
 
-    <!-- Trigger @angular-eslint/template/no-autofocus -->
-    <input type="text" autofocus />
+    <!-- Fixed: @angular-eslint/template/no-autofocus -->
+    <input type="text" />
 
-    <!-- Trigger @angular-eslint/template/no-distracting-elements -->
-    <blink>Don't use blink!</blink>
+    <!-- Fixed: @angular-eslint/template/no-distracting-elements -->
+    <!-- Removed the <blink> element -->
 
-    <!-- Trigger @angular-eslint/template/role-has-required-aria -->
-    <!-- Missing aria-required attribute for role="textbox" -->
-    <div role="textbox"></div>
+    <!-- Fixed: @angular-eslint/template/role-has-required-aria -->
+    <div role="textbox" aria-required="true"></div>
 
-    <!-- Trigger @angular-eslint/template/table-scope -->
-    <th>Header</th>
+    <!-- Fixed: @angular-eslint/template/table-scope -->
+    <th scope="col">Header</th>
 
-    <!-- Trigger @angular-eslint/template/valid-aria -->
-    <div aria-hidden="maybe"></div>
-    <!-- Invalid ARIA attribute value -->
+    <!-- Fixed: @angular-eslint/template/valid-aria -->
+    <div aria-hidden="true"></div>
   </div>
 </main>
 

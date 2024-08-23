@@ -18,4 +18,8 @@ export class AppComponent {
   onMouseOver() {
     console.log('click');
   }
+
+  onKeydown() {
+    console.log('keydown');
+  }
 }
